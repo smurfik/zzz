@@ -17,4 +17,20 @@
         <td><%= link_to "Remove" %></td>
       </tr>
     <% end %>
+  </table>
+</div>
+
+<% if @sleep_stat %>
+  <% @sleep_stat.errors.each do |column, message| %>
+    <div><%= column %>: <%= message %></div>
+  <% end %>
+<% end %>
+
+<div>
+  <h2>Add Hours Slept</h2>
+  <%= form_tag "/sleep-stats" do %>
+    <%= label_tag "# of hours"%>
+    <%= text_field_tag :hours, nil, placeholder: "hours slept" %>
+    <%= submit_tag "Add" %>
+  <% end %>
 </div>
