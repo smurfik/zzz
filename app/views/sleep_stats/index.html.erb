@@ -9,7 +9,7 @@
     <th>Hours Slept</th>
     <th>Delete</th>
   </tr>
-  <% @sleep_stats.each do |stat| %>
+  <% @stats.each do |stat| %>
     <tr>
       <td><%= stat.clean_time%></td>
       <td><%= stat.hours %></td>
@@ -22,8 +22,8 @@
 </table>
 
 <div>
-  <% if @sleep_stat %>
-    <% @sleep_stat.errors.each do |column, message| %>
+  <% if @stat %>
+    <% @stat.errors.each do |column, message| %>
       <div><strong># of <%= column %> <%= message %></strong></div>
     <% end %>
   <% end %>
