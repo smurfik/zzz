@@ -16,6 +16,9 @@ class SleepStatsController < ApplicationController
   end
 
   def remove_stat
+    @sleep_stat = SleepStat.find(params[:id])
+    @sleep_stat.destroy
+    redirect_to sleep_stats_path
   end
 
 end

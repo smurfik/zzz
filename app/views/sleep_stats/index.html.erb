@@ -13,7 +13,10 @@
     <tr>
       <td><%= stat.clean_time%></td>
       <td><%= stat.hours %></td>
-      <td><%= link_to "Remove" %></td>
+      <td><%= form_tag "/sleep-stats/#{stat.id}", method: "DELETE" do %>
+        <%= submit_tag "Delete", data: { confirm: "Are you sure?" } %>
+        <% end %>
+      </td>
     </tr>
   <% end %>
 </table>
