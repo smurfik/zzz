@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/sleep-stats'        , to: 'sleep_stats#index'
   post '/sleep-stats'       , to: 'sleep_stats#create'
   delete '/sleep-stats/:id' , to: 'sleep_stats#remove_stat'
+  patch '/sleep-stats/:id'  , to: 'sleep_stats#update'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

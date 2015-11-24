@@ -54,3 +54,31 @@ table {
 img {
   padding-top: 25px;
 }
+
+tr.update {
+  display: none;
+}
+
+form {
+  display: inline-block;
+}
+
+.btn {
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    padding: 2px 6px 3px;
+    border: 2px outset buttonface;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    background-color: buttonface;
+    box-sizing: border-box; display: inline-block;
+    -webkit-appearance: push-button;
+    -webkit-user-select: none;
+    white-space: pre;
+    font-size: small;
+}
