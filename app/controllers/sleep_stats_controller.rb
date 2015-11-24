@@ -1,4 +1,4 @@
-class SleepStatsController < ActionController::Base
+class SleepStatsController < ApplicationController
 
   def index
     @sleep_stats = SleepStat.all
@@ -7,7 +7,15 @@ class SleepStatsController < ActionController::Base
   def create
     @sleep_stat = SleepStat.new
     @sleep_stat.hours = params[:hours]
-    raise
+    if @sleep_stat.save
+      redirect_to sleep_stats_path
+    else
+      @sleep_stats = SleepStat.all
+      render 'index'
+    end
+  end
+
+  def remove_stat
   end
 
 end
