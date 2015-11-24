@@ -13,10 +13,12 @@
 
 body {
   font-family: Futura, sans-serif;
+  //background-color: #EFEBEA;
+  background-color: #f7f4ef;
 }
 
 .name {
-  color: #372772;
+  color: #352c23;
   font-size: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -31,7 +33,7 @@ td {
 }
 
 table {
-  margin-top: 70px;
+  margin-top: 60px;
 }
 
 .sub-center:before {
@@ -47,4 +49,8 @@ table {
 
 .sub-center form {
   margin-left: 30px;
+}
+
+img {
+  padding-top: 25px;
 }
