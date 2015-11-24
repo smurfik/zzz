@@ -5,8 +5,7 @@ class SleepStatsController < ApplicationController
   end
 
   def create
-    @sleep_stat = SleepStat.new
-    @sleep_stat.hours = params[:hours]
+    @sleep_stat = SleepStat.new(hours: params[:hours])
     if @sleep_stat.save
       redirect_to sleep_stats_path
     else

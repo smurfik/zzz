@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/sleep-stats', to: 'sleep_stats#index', as: :sleep_stats
+  get '/sleep-stats', to: 'sleep_stats#index'
   post '/sleep-stats', to: 'sleep_stats#create'
   delete '/sleep-stats/:id', to: 'sleep_stats#remove_stat'
 
