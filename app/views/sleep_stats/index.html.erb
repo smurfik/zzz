@@ -11,9 +11,9 @@
   </tr>
   <% @stats.each do |stat| %>
     <tr>
-      <td width="33.33%"><%= stat.clean_time%></td>
-      <td width="33.33%"><%= stat.hours %></td>
-      <td width="33.33%"><%= form_tag "/sleep-stats/#{stat.id}", method: "DELETE" do %>
+      <td><%= stat.clean_time%></td>
+      <td><%= stat.hours %></td>
+      <td><%= form_tag "/sleep-stats/#{stat.id}", method: "DELETE" do %>
         <%= submit_tag "Delete", data: { confirm: "Are you sure?" } %>
         <% end %>
         <div class="btn">Edit</div>
@@ -21,9 +21,9 @@
     </tr>
 
     <tr class="update">
-      <td width="33.33%"><%= stat.clean_time%></td>
-      <td width="33.33%"><%= stat.hours %></td>
-      <td width="33.33%"><%= form_tag "/sleep-stats/#{stat.id}", method: "PATCH" do %>
+      <td><%= stat.clean_time%></td>
+      <td><%= stat.hours %></td>
+      <td><%= form_tag "/sleep-stats/#{stat.id}", method: "PATCH" do %>
         <%= text_field_tag "stat[hours]", stat.hours, :size => 5%>
         <%= submit_tag "Update" %>
       <% end %>
