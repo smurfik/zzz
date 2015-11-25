@@ -11,7 +11,7 @@
     <th class="header"></th>
   </tr>
   <% @stats.each do |stat| %>
-    <tr>
+    <tr id="stat <%=stat.id%>">
       <td><%= stat.clean_time%></td>
       <td><%= stat.hours %></td>
       <td><%= stat.mood %></td>
@@ -22,7 +22,7 @@
       </td>
     </tr>
 
-    <tr class="update">
+    <tr class="update" id="update <%=stat.id%>">
       <td><%= stat.clean_time%></td>
       <td><%= stat.hours %></td>
       <td><%= stat.mood %></td>
