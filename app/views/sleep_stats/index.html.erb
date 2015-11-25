@@ -28,6 +28,7 @@
       <td><%= stat.mood %></td>
       <td><%= form_tag "/sleep-stats/#{stat.id}", method: "PATCH" do %>
         <%= text_field_tag "stat[hours]", stat.hours, :size => 5%>
+        <%= text_field_tag "stat[mood]", stat.mood, :size => 5%>
         <%= submit_tag "Update" %>
       <% end %>
       </td>
@@ -37,25 +38,31 @@
 
 <div class="sub-center">
   <% if @stat %>
-    <% @stat.errors.each do |column, message| %>
-      <div class="error"><strong><%= column %> <%= message %></strong></div>
+    <% @stat.errors.full_messages.each do |message| %>
+      <div class="error"><strong><%= message %></strong></div>
     <% end %>
   <% end %>
 </div>
 
 <div class="sub-center">
   <%= form_tag "/sleep-stats" do %>
-    <%= label_tag "# of hours"%>
-    <%= text_field_tag "stat[hours]", nil, placeholder: "hours slept" %>
-    <%= submit_tag "Add" %>
-  <% end %>
-</div>
-
-<div class="sub-center">
-  <%= form_tag "/sleep-stats" do %>
-    <%= label_tag "mood"%>
-    <%= text_field_tag "stat[mood]", nil, placeholder: "mood" %>
-    <%= submit_tag "Add" %>
+    <div class="left-btn">
+      <%= label_tag "# of hours"%>
+    </div>
+    <div class="right-btn">
+      <%= text_field_tag "stat[hours]", nil, placeholder: "hours slept", :size => 10 %>
+    </div>
+    <br>
+    <div class="left-btn">
+      <%= label_tag "mood"%>
+    </div>
+    <div class="right-btn">
+      <%= text_field_tag "stat[mood]", nil, placeholder: "mood", :size => 10  %>
+    </div>
+    <br>
+    <div class="center-btn">
+      <%= submit_tag "Add" %>
+    </div>
   <% end %>
 </div>
 

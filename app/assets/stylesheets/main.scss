@@ -83,3 +83,19 @@ form {
     white-space: pre;
     font-size: small;
 }
+
+.center-btn {
+  text-align: center;
+  clear: both;
+}
+
+.right-btn {
+  display: inline-block;
+  float: right;
+  padding-left: 80px;
+}
+
+.left-btn {
+  display: inline-block;
+  float: left;
+}
