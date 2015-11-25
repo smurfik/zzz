@@ -15,24 +15,19 @@
       <td><%= stat.clean_time%></td>
       <td><%= stat.hours %></td>
       <td><%= stat.mood %></td>
-      <td><%= form_tag "/sleep-stats/#{stat.id}", method: "DELETE" do %>
+      <td class="delete"><%= form_tag "/sleep-stats/#{stat.id}", method: "DELETE" do %>
         <%= submit_tag "Delete", data: { confirm: "Are you sure?" } %>
         <% end %>
         <div class="btn">Edit</div>
       </td>
-    </tr>
-
-    <tr class="update" id="update <%=stat.id%>">
-      <td><%= stat.clean_time%></td>
-      <td><%= stat.hours %></td>
-      <td><%= stat.mood %></td>
-      <td><%= form_tag "/sleep-stats/#{stat.id}", method: "PATCH" do %>
+      <td class="update"><%= form_tag "/sleep-stats/#{stat.id}", method: "PATCH" do %>
         <%= text_field_tag "stat[hours]", stat.hours, :size => 5%>
         <%= text_field_tag "stat[mood]", stat.mood, :size => 5%>
         <%= submit_tag "Update" %>
       <% end %>
       </td>
     </tr>
+
   <% end %>
 </table>
 
