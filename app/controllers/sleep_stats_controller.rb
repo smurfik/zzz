@@ -5,7 +5,7 @@ class SleepStatsController < ApplicationController
   end
 
   def create
-    @stat = SleepStat.new(params.require(:stat).permit(:hours))
+    @stat = SleepStat.new(params.require(:stat).permit(:hours, :mood))
     if @stat.save
       redirect_to sleep_stats_path
     else
@@ -23,6 +23,7 @@ class SleepStatsController < ApplicationController
   def update
     @stat = SleepStat.find(params[:id])
     @stat.hours = params[:stat][:hours]
+    @stat.mood = params[:stat][:mood]
     if @stat.save
       redirect_to sleep_stats_path
     else

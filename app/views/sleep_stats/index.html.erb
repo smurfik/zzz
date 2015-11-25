@@ -38,7 +38,7 @@
 <div class="sub-center">
   <% if @stat %>
     <% @stat.errors.each do |column, message| %>
-      <div class="error"><strong># of <%= column %> <%= message %></strong></div>
+      <div class="error"><strong><%= column %> <%= message %></strong></div>
     <% end %>
   <% end %>
 </div>
@@ -47,6 +47,14 @@
   <%= form_tag "/sleep-stats" do %>
     <%= label_tag "# of hours"%>
     <%= text_field_tag "stat[hours]", nil, placeholder: "hours slept" %>
+    <%= submit_tag "Add" %>
+  <% end %>
+</div>
+
+<div class="sub-center">
+  <%= form_tag "/sleep-stats" do %>
+    <%= label_tag "mood"%>
+    <%= text_field_tag "stat[mood]", nil, placeholder: "mood" %>
     <%= submit_tag "Add" %>
   <% end %>
 </div>
