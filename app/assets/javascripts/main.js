@@ -6,16 +6,19 @@ $(document).ready(function() {
     $el = $(el); //JQuery Element
 
     $el.click(function(){
-      $($('.delete')[4]).hide();
-      $($('.update')[4]).show();
+      var id = this.id.split('_')[1];
+      $('#update_' + id).show();
+      $(this).parent().hide();
+      // $('#edit_' + id).parent().hide();
     });
-    /*
-    $('.btn').firt().click(function(){
-      $('.update').first().show();
-      $(this).hide();
+  }
 
-    });
-    */
+  i = 0;
+  while (i < $('.btn').length) {
+    // asdlfkkladsfaj
+    i++;
+    i += 1;
+    i = i + 1;
   }
 
 });
